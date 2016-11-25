@@ -1,189 +1,139 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>pseudo classes</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <title>pseudo classes</title>
 
-  <style>
-    
-    .main.only-of-type a:only-of-type {
-      border: 2px solid black;
-    }
+        <style>
+            html, 
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
 
-    .main.first-of-type a:first-of-type {
-      border: 2px solid black;
-    }
+                font-size: 14px;
+            }
 
-    .main.last-of-type a:last-of-type {
-      border: 2px solid black;
-    }
+            body {
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
 
-    .main.nth-of-type a:nth-of-type(1) {
-      border: 2px solid black;
-    }
+                flex-direction: row;
 
-    .main.nth-last-of-type a:nth-last-of-type(1) {
-      border: 2px solid black;
-    }
+                padding: 40px;
 
-    .main.only-child a:only-child {
-      border: 2px solid black;
-    }
+                font-family: "Microsoft YaHei", 微软雅黑体, 微軟雅黑體, "Microsoft JhengHei", 微軟正黑體, Arial, Helvetica, sans-serif;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
 
-    .main.first-child a:first-child {
-      border: 2px solid black;
-    }
+            a { 
+                display: block; 
+                margin: 20px auto;
+                min-height: 50px;
+                line-height: 50px;
+                list-style-type: none;
+                text-decoration: none;
 
-    .main.last-child a:last-child {
-      border: 2px solid black;
-    }
+                transition: all .3s;
+            }
 
-    .main.nth-child a:nth-child(1) {
-      border: 2px solid black;
-    }
+            .main.only-of-type a:only-of-type { background-color: #FF8C69; color: #fff;}
+            .main.first-of-type a:first-of-type { background-color: #FF8C69; color: #fff;}
+            .main.last-of-type a:last-of-type { background-color: #FF8C69; color: #fff;}
+            .main.nth-of-type a:nth-of-type(1) { background-color: #FF8C69; color: #fff;}
+            .main.nth-last-of-type a:nth-last-of-type(1) { background-color: #FF8C69; color: #fff;}
+            .main.only-child a:only-child { background-color: #FF8C69; color: #fff;}
+            .main.first-child a:first-child { background-color: #FF8C69; color: #fff;}
+            .main.last-child a:last-child { background-color: #FF8C69; color: #fff;}
+            .main.nth-child a:nth-child(1) { background-color: #FF8C69; color: #fff;}
+            .main.nth-last-child a:nth-last-child(1) { background-color: #FF8C69; color: #fff;}
 
-    .main.nth-last-child a:nth-last-child(1) {
-      border: 2px solid black;
-    }
-  </style>
-</head>
-<body>
-    <div id="main" class="main">
-     <a href="#">Inner Link 1</a>
-     <a href="#">Inner Link 2</a>
-     <ul>
-       <a href="#">Inner Inner Link 1</a>
-       <li>
-         <a href="#">List Item 1</a>
-       </li>
-       <li>
-         <a href="#">List Item 2</a>
-       </li>
-     </ul>
-     <a href="#">Inner Link 3</a>
-    </div>
-  <a href="#">Outer Link 1</a>
-  <a href="#">Outer Link 2</a>
-  
-  
 
-  
-  
-  
-  
-  <label for="only-of-type">
-    <input 
-      id="only-of-type"
-      type="radio" 
-      name="style" 
-      value="only-of-type" 
-      onchange="updateInput(this.value)"
-    />
-    only-of-type
-  </label>
-  <label for="first-of-type">
-    <input 
-      id="first-of-type"
-      type="radio" 
-      name="style" 
-      value="first-of-type" 
-      onchange="updateInput(this.value)"
-    />
-    first-of-type
-  </label>
-  <label for="last-of-type">
-    <input 
-      id="last-of-type"
-      type="radio" 
-      name="style" 
-      value="last-of-type" 
-      onchange="updateInput(this.value)"
-    />
-    last-of-type
-  </label>
-  <label for="nth-of-type">
-    <input 
-      id="nth-of-type"
-      type="radio" 
-      name="style" 
-      value="nth-of-type" 
-      onchange="updateInput(this.value)"
-    />
-    nth-of-type
-  </label>
-  <label for="nth-last-of-type">
-    <input 
-      id="nth-last-of-type"
-      type="radio" 
-      name="style" 
-      value="nth-last-of-type" 
-      onchange="updateInput(this.value)"
-    />
-    nth-last-of-type
-  </label>
-  <label for="only-child">
-    <input 
-      id="only-child"
-      type="radio" 
-      name="style" 
-      value="only-child" 
-      onchange="updateInput(this.value)"
-    />
-    only-child
-  </label>
-  <label for="first-child">
-    <input 
-      id="first-child"
-      type="radio" 
-      name="style" 
-      value="first-child" 
-      onchange="updateInput(this.value)"
-    />
-    first-child
-  </label>
-  <label for="last-child">
-    <input 
-      id="last-child"
-      type="radio" 
-      name="style" 
-      value="last-child" 
-      onchange="updateInput(this.value)"
-    />
-    last-child
-    </label>
-  <label for="nth-child">
-    <input 
-      id="nth-child"
-      type="radio" 
-      name="style" 
-      value="nth-child" 
-      onchange="updateInput(this.value)"
-    />
-    nth-child
-    </label>
-  <label for="nth-last-child">
-    <input 
-      id="nth-last-child"
-      type="radio" 
-      name="style" 
-      value="nth-last-child" 
-      onchange="updateInput(this.value)"
-    />
-    nth-last-child
-  </label>
+            label {
+                display: block;
+                margin: 20px auto;
+            }
 
-  <div class="source">
-    source: 
-    <a href="https://medium.freecodecamp.com/explained-css-pseudo-classes-cef3c3177361#.wdea11v8u">資料來源</a>
-  </div>
+            label input {
+                margin-right: 10px;
+            }
 
-  <script text="type/javascript">
-    function updateInput(value){
-      var _main = document.querySelector('#main');
-      
-      _main.setAttribute('class', 'main ' + value);
-    }
-  </script>
-</body>
+            #main, 
+            #labelGroup {
+                flex: 1 0 auto;
+                margin: auto;
+
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main" class="main">
+            <a href="#">Inner Link 1</a>
+            <a href="#">Inner Link 2</a>
+            <ul>
+                <a href="#">Inner Inner Link 1</a>
+                <li>
+                    <a href="#">List Item 1</a>
+                </li>
+                <li>
+                    <a href="#">List Item 2</a>
+                </li>
+            </ul>
+            <a href="#">Inner Link 3</a>
+
+            <div class="other">
+                <a href="#">Outer Link 1</a>
+                <a href="#">Outer Link 2</a>  
+            </div>
+
+        </div>
+
+        
+
+        <div id="labelGroup">
+            <div class="source">
+                source: 
+                <a href="https://medium.freecodecamp.com/explained-css-pseudo-classes-cef3c3177361#.wdea11v8u">資料來源</a>
+            </div>
+        </div>
+
+        <script text="type/javascript">
+
+            var labels = [
+                'only-of-type',
+                'first-of-type',
+                'last-of-type',
+                'nth-of-type',
+                'nth-last-of-type',
+                'only-child',
+                'first-child',
+                'last-child',
+                'nth-last-child'
+            ]
+
+            var lens = labels.length,
+                value = '',
+                _labelGroup = document.querySelector('#labelGroup');
+
+            labels.map(function(t, i){
+                value += '<label for="' + t + '"><input id="' + t + '" type="radio" name="style" value="' + t + '" onchange="updateInput(this.value)" />' + t + '</label>';
+            });
+
+            _labelGroup.insertAdjacentHTML('afterbegin', value);
+
+            function updateInput(value){
+                var _main = document.querySelector('#main');
+                _main.setAttribute('class', 'main ' + value);
+            }
+
+        </script>
+
+    </body>
 </html>
